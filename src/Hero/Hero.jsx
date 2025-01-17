@@ -10,11 +10,15 @@ const HeroContain = styled.div`
   justify-content: space-between;
   align-items: center;
 
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 20px;
+  }
 `;
 
 const HeroNote = styled.div`
   max-width: 600px;
-  
+
   h1 {
     font-size: 2.5rem;
     font-weight: bold;
@@ -51,30 +55,48 @@ const HeroButton = styled.div`
     font-size: 1rem;
   }
 `;
+
 const HeroImage = styled.div`
   display: flex;
-  justify-content: center;  
-  align-items: center;  
+  justify-content: center;
+  align-items: center;
   position: relative;
-  width: 400px;  
+  width: 400px;
+  height: 400px; // Added height for the container to control positioning
 
   img {
-    width: 100%;  /
+    width: 100%;
     height: auto;
   }
 
   .car {
     position: absolute;
-      width: 650px;
-      right: 20;
+    width: 650px;
+    right: 20px;
   }
 
   .bike {
     position: absolute;
     width: 400px;
-    top: 90px;  
-    left: 190px;
-    transform: translateY(-50%);  // Center the bike image vertically relative to the car image
+    top: 220px;
+    left: 100px;
+    transform: translateY(-50%);
+  }
+
+  @media (max-width: 768px) {
+    width: 300px;
+    height: 300px;
+
+    .car {
+      width: 420px;
+      left: -70px;
+    }
+
+    .bike {
+      width: 290px;
+      top: 180px;
+      left: 90px;
+    }
   }
 `;
 
@@ -93,7 +115,7 @@ const Hero = () => {
         </HeroButton>
       </HeroNote>
       <HeroImage>
-        <img src={car} className="car" alt="Car"  />
+        <img src={car} className="car" alt="Car" />
         <img className="bike" src={bike} alt="Bike" />
       </HeroImage>
     </HeroContain>
