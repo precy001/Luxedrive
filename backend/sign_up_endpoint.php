@@ -34,8 +34,15 @@
 
     $user_password = $_POST['user_password'];
     $hash_password = password_hash($user_password, PASSWORD_DEFAULT);
- 
-    //Getting the highest id number
+
+    //Checking if user already exists  
+    $user_check = "SELECT * FROM users_data WHERE user_email = '$user_email'";
+    $user_check_result = mysqli_query($conn, $user_check);
+
+    if(mysqli_num_rows($user_check_result) > 0){
+        echo"User with the email already exist";
+    }else{
+            //Getting the highest id number
 
     $check = "SELECT MAX(user_id) AS highest_id FROM users_data";
     $result = mysqli_query($conn, $check);
@@ -47,7 +54,6 @@
 
     $next_id = $highest_id + 1;
     $input_id = "00$next_id";
-    echo $input_id;
 
     //Add verified sign ups to the database
 
@@ -71,6 +77,7 @@
         echo"Success";
     }else{
         echo"An error occured";
+    }
     }
 
     mysqli_close($conn)

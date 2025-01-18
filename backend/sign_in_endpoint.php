@@ -1,5 +1,5 @@
 <?php
-     //Do not Touch, It works!
+    //Do not Touch, It works!
     //Do not Touch, It works!
     //Do not Touch, It works!
     //Do not Touch, It works!
@@ -32,7 +32,14 @@
     if(mysqli_num_rows($result) > 0){
         $row = mysqli_fetch_assoc($result);
         $user_name = $row['user_name'];
+        $user_hashed_password = $row['user_password'];
+       if(password_verify($user_password, $user_hashed_password)){
+            echo"success";
+            echo"$user_name";
+       }else{
+        echo"Invalid credentials";
+       }
     }else{
-        echo"user not found";
+        echo"Invalid credentials";
     }
 ?>
