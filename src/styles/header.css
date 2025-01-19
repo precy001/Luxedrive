@@ -1,0 +1,80 @@
+.main-header{
+    background:linear-gradient(#000, rgba(0, 0, 0, 0.8));
+    /* background-color: #000; */
+    color: #fff;
+} 
+
+.nav{
+    padding: 1.2rem 4rem;
+}
+
+.brand-name{
+    font-weight: 600;
+    font-size: 1.3rem;
+    display: inline;
+}
+
+.nav-links{
+    float: right;
+    display: inline;
+}
+
+.nav-links li{
+    list-style-type: none;
+    display: inline;
+    padding-left: 1.2rem;
+}
+
+.auth-link{
+    text-decoration: none;
+    font-size: .8rem;
+    font-weight: 600;
+}
+
+.sign-in{
+    border: 1px solid #fff;
+    padding: .5rem 1.5rem;
+    border-radius: 2px;
+    color: #fff;
+}
+
+.sign-up{
+    border: 1px solid #fff;
+    padding: .5rem 1.5rem;
+    border-radius: 2px;
+    background-color: #fff;
+    color: #000;
+}
+
+.header-page-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.left{
+    width: 55%;
+    padding:6rem 4rem;
+}
+
+.unlock{
+    font-size: 2.8rem;
+    font-weight: 800;
+}
+
+.right-img{
+    width: 80%;
+}
+
+.short-note{
+    padding-top: 1.5rem;
+    font-size: .8rem;
+    opacity: .8;
+}
+
+.rent-btns{
+    padding-top: 3rem;
+}
+
+.rent-btns .sign-up{
+   margin-right: 1.2rem;
+}

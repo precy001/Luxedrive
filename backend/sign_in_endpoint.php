@@ -40,6 +40,6 @@
         echo"Invalid credentials";
        }
     }else{
-        echo"Invalid credentials";
+        echo"User not found";
     }
 ?>
