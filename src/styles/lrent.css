@@ -32,7 +32,8 @@
     border-radius: 7px;
     padding: .8rem;
     padding-bottom: 1rem;
-    background-color: rgba(255, 255, 255, .5)
+    background-color: rgba(255, 255, 255, .5);
+    
 }
 
 .product-name{
@@ -79,6 +80,7 @@
     border-radius: 2px;
     cursor: pointer;
     font-size: .8rem;
+    text-decoration: none;
 }
 
 .lrent-short-note{

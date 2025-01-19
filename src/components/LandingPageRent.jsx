@@ -1,5 +1,6 @@
 import React from 'react'
 import '../styles/lrent.css'
+import { Link } from 'react-router-dom'
 import scorpio from '../assets/images/Products/cars/scorpio.png'
 import verzel from '../assets/images/Products/cars/verzel.png'
 import cbr from '../assets/images/Products/bikes/cbr.png'
@@ -145,7 +146,7 @@ const LandingPageRent = () => {
                         </div>
 
                         <div className="rent-btn">
-                            <button className='black-rent-btn'>Rent</button>
+                            <Link to="/signin" className='black-rent-btn'>Rent</Link>
                         </div>
                     </div>
                 </div>
@@ -205,7 +206,7 @@ const LandingPageRent = () => {
                         </div>
 
                         <div className="rent-btn">
-                            <button className='black-rent-btn'>Rent</button>
+                        <Link to="/signin" className='black-rent-btn'>Rent</Link>
                         </div>
                     </div>
                 </div>
