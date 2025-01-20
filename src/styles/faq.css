@@ -15,33 +15,43 @@
   }
   
   .faq-item {
-    border-radius: 8px;
+    border-radius: 4px;
    
     cursor: pointer;
-     padding: .5rem;
+    padding: .3rem;
     transition: all 0.3s ease; 
     border: 1px solid black;
+    transition: .5s ease-in-out ;
   }
+
+
   
   .faq-question {
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 1.2rem;
-    font-weight: 500;
+    
    
    
     border-radius: 4px;
 
     transition: background-color 0.3s ease;
   }
+
+  .the-question{
+    font-size: .8rem;
+    font-weight: 600;
+    opacity: .8;
+  }
   
   .faq-answer {
    
     border-radius: 6px;
     margin-top: 0.5rem;
-    font-size: 1rem;
+    font-size: .8rem;
     color: #333;
+    opacity: .8;
   }
   
   .icon {

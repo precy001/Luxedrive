@@ -21,12 +21,14 @@ const Faq = () => {
   return (
     <div>
       <div className="ques">Have Any Questions</div>
-      <hr className='faq-divider' />
+      <center>
+      <hr className='default-rule' />
+      </center>
       <div className="dropdowns">
         {questions.map((question, index) => (
           <div className="faq-item" key={index}>
             <div className="faq-question" onClick={() => toggleAnswer(index)}>
-              <span>{question.question}</span>
+              <span className='the-question'>{question.question}</span>
               <span className="icon">
                 {activeIndex === index ? <IoIosArrowUp /> : <IoIosArrowDown />}
               </span>
