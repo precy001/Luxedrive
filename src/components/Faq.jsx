@@ -19,7 +19,7 @@ const Faq = () => {
   };
 
   return (
-    <div>
+    <div className='faqs-container'>
       <div className="ques">Have Any Questions</div>
       <center>
       <hr className='default-rule' />

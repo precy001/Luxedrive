@@ -6,6 +6,7 @@
     //Do not Touch, It works!
 
      header("Access-Control-Allow-Origin: http://localhost:5173");
+     header("Access-Control-Allow-Origin: http://localhost:5174");
      header("Access-Control-Allow-Methods: POST, GET, OPTIONS"); 
      header("Access-Control-Allow-Headers: Content-Type, Authorization");
      header("Content-Type: application/json");
@@ -22,17 +23,17 @@
 
     $user_name = filter_input(
         INPUT_POST, 
-        'user_name', 
+        'name', 
         FILTER_SANITIZE_SPECIAL_CHARS
     );
     
     $user_email = filter_input(
         INPUT_POST, 
-        'user_email', 
+        'email', 
         FILTER_SANITIZE_EMAIL
     );
 
-    $user_password = $_POST['user_password'];
+    $user_password = $_POST['password'];
     $hash_password = password_hash($user_password, PASSWORD_DEFAULT);
 
     //Checking if user already exists  
