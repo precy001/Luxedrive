@@ -188,3 +188,12 @@
     padding: .5rem 0;
     transition: .5s ease-in-out;
 }
+
+.switch{
+    font-size: .8rem;
+    margin-top: .5rem;
+}
+
+.switch .switch-link{
+    color: #000;
+}

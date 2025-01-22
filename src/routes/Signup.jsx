@@ -193,6 +193,9 @@ const Signup = () => {
                       Sign Up
                     </button>
                   </div>
+                  <div className="switch">
+                    Already have an account, <Link to="/signin" className='switch-link'>Sign in</Link>
+                  </div>
                 </form>
             </div>
         </div>

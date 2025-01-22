@@ -142,10 +142,13 @@ const Signup = () => {
 
                   <div className="sign-up-btn">
                     <button className='the-button' onClick={(event) => handleSubmit(event)}>
-                      Sign Up
+                      Sign In
                     </button>
                   </div>
-                </form>
+                  <div className="switch">
+                    Already have an account, <Link to="/signin" className='switch-link'>Sign in</Link>
+                  </div>
+                </form>     
             </div>
         </div>
     </div>
