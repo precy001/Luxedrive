@@ -21,10 +21,10 @@
 
    $user_email = filter_input(
    INPUT_POST, 
-   'user_email', 
+   'email', 
    FILTER_SANITIZE_EMAIL
 );
-    $user_password = $_POST['user_password'];
+    $user_password = $_POST['password'];
 
     $check = "SELECT * FROM users_data WHERE user_email = '$user_email'";
     $result = mysqli_query($conn, $check);
@@ -35,7 +35,6 @@
         $user_hashed_password = $row['user_password'];
        if(password_verify($user_password, $user_hashed_password)){
             echo"success";
-            echo"$user_name";
        }else{
         echo"Invalid credentials";
        }

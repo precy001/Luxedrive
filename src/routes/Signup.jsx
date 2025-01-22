@@ -7,6 +7,8 @@ import { jwtDecode } from 'jwt-decode'
 
 const Signup = () => {
 
+  const [backEndResponse, setBackEndResponse] = useState(null)
+
   const[error, setError] = useState('')
 
   const[name, setName] = useState('')
@@ -94,21 +96,32 @@ const Signup = () => {
 
                 <div className="continue-google">
                 <GoogleLogin
-          onSuccess={credentialResponse => {
-           const credentialResponseDecoded = jwtDecode(credentialResponse.credential)
-            
-           const url = "http://localhost/luxedrive/backend/sign_up_endpoint.php";
-           let fdata = new FormData();
-           fdata.append('name', credentialResponseDecoded.name)
-           fdata.append('email', credentialResponseDecoded.email)
-           fdata.append('password', null)
-           axios.post(url, fdata).then(response => alert(response.data)).catch(error => alert(error)).then(setTimeout(() => {
-             window.location.href = "/home"
-           }), 3000)
-          }}
-          onError={() => {
-            setError("An error occured, please try again later");
-          }}
+  onSuccess={credentialResponse => {
+    const credentialResponseDecoded = jwtDecode(credentialResponse.credential);
+
+    const url_google = "http://localhost/luxedrive/backend/google_oauth.php";
+    let fdata = new FormData();
+    fdata.append('name', credentialResponseDecoded.name);
+    fdata.append('email', credentialResponseDecoded.email);
+    fdata.append('password', credentialResponseDecoded.sub)
+
+    axios.post(url_google, fdata)
+      .then(response => {
+        const data = response.data;
+        setBackEndResponse(data); 
+        if (data === 'success') {
+          window.location.href = "/home"; 
+        } else {
+          alert(data); 
+        }
+      })
+      .catch(error => {
+        alert("An error occurred: " + error.message);
+      });
+  }}
+  onError={() => {
+    setError("An error occurred, please try again later");
+  }}
         />
                 </div>
 
