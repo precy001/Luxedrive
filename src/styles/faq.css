@@ -38,21 +38,28 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: .8rem;
+  font-size: 1.2rem;
   font-weight: 500;
   border-radius: 4px;
   transition: background-color 0.3s ease;
 }
 
+.the-question {
+  font-size: .8rem;
+  font-weight: 600;
+  opacity: .8;
+}
+
 .faq-answer {
   padding-left: 20px;
   margin-top: 5px;
-  font-size: 0.7rem;
+  font-size: .8rem;
   color: #333;
+  opacity: .8;
 }
 
 .icon {
-  font-size: .9rem;
+  font-size: 1.5rem;
   transition: transform 0.3s ease;
 }
 
@@ -67,7 +74,6 @@
   gap: 15px; 
   margin-top: 10px;
   padding: 20px;
-  
 }
 
 .share > div {
@@ -79,7 +85,18 @@
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-
 .faq-questions {
   margin-top: 10px;
+}
+
+.dropdowns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem; 
+  padding: 2rem 8rem;
+}
+
+.faqs-container {
+  margin-bottom: 7rem;
+  margin-top: 2rem;
 }

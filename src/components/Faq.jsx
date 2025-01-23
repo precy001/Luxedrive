@@ -65,7 +65,6 @@ const Faq = () => {
     <div>
       <div className="ques">Have Any Questions?</div>
       <hr className="faq-divider" />
-
       <div className="faq-sections">
         <center>
           <div className="section-nav">
@@ -80,36 +79,33 @@ const Faq = () => {
             ))}
           </div>
         </center>
-<div className="share">
-        <div className="faq-questions">
-          {/* Render first 3 questions based on Active Section */}
-          {faqData[activeSection].slice(0, 3).map((question, index) => (
-            <div className="faq-item" key={index}>
-              <div className="faq-question" onClick={() => toggleAnswer(index)}>
-                <span>{question.question}</span>
-                <span className="icon">
-                  {activeIndex === index ? <IoIosArrowUp /> : <IoIosArrowDown />}
-                </span>
+        <div className="share">
+          <div className="faq-questions">
+            {faqData[activeSection].slice(0, 3).map((question, index) => (
+              <div className="faq-item" key={index}>
+                <div className="faq-question" onClick={() => toggleAnswer(index)}>
+                  <span>{question.question}</span>
+                  <span className="icon">
+                    {activeIndex === index ? <IoIosArrowUp /> : <IoIosArrowDown />}
+                  </span>
+                </div>
+                {activeIndex === index && <div className="faq-answer">{question.answer}</div>}
               </div>
-              {activeIndex === index && <div className="faq-answer">{question.answer}</div>}
-            </div>
-          ))}
-        </div>
-
-        <div className="faq-questions">
-          {/* Render last 3 questions based on Active Section */}
-          {faqData[activeSection].slice(3, 6).map((question, index) => (
-            <div className="faq-item" key={index}>
-              <div className="faq-question" onClick={() => toggleAnswer(index + 3)}>
-                <span>{question.question}</span>
-                <span className="icon">
-                  {activeIndex === index + 3 ? <IoIosArrowUp /> : <IoIosArrowDown />}
-                </span>
+            ))}
+          </div>
+          <div className="faq-questions">
+            {faqData[activeSection].slice(3, 6).map((question, index) => (
+              <div className="faq-item" key={index}>
+                <div className="faq-question" onClick={() => toggleAnswer(index + 3)}>
+                  <span>{question.question}</span>
+                  <span className="icon">
+                    {activeIndex === index + 3 ? <IoIosArrowUp /> : <IoIosArrowDown />}
+                  </span>
+                </div>
+                {activeIndex === index + 3 && <div className="faq-answer">{question.answer}</div>}
               </div>
-              {activeIndex === index + 3 && <div className="faq-answer">{question.answer}</div>}
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
