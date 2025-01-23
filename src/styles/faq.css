@@ -1,51 +1,85 @@
 .ques {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-  
-  .dropdowns {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem; 
-    padding: 2rem 8rem;
-    
-   
-  }
-  
-  .faq-item {
-    border-radius: 8px;
-   
-    cursor: pointer;
-     padding: .5rem;
-    transition: all 0.3s ease; 
-    border: 1px solid black;
-  }
-  
-  .faq-question {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1.2rem;
-    font-weight: 500;
-   
-   
-    border-radius: 4px;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+}
 
-    transition: background-color 0.3s ease;
-  }
+.faq-sections {
+  margin-top: 20px;
+}
+
+.section-nav button {
+  margin-right: 15px;
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+}
+
+.section-nav button.active {
+  background-color: #b9b9b9;
+  color: white;
+}
+
+.faq-item {
+  margin-bottom: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: .5rem;
+  transition: all 0.3s ease;
+  border: 1px solid #ddd;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: .8rem;
+  font-weight: 500;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.faq-answer {
+  padding-left: 20px;
+  margin-top: 5px;
+  font-size: 0.7rem;
+  color: #333;
+}
+
+.icon {
+  font-size: .9rem;
+  transition: transform 0.3s ease;
+}
+
+.faq-divider {
+  margin-top: 20px;
+}
+
+.share {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-evenly;
+  gap: 15px; 
+  margin-top: 10px;
+  padding: 20px;
   
-  .faq-answer {
-   
-    border-radius: 6px;
-    margin-top: 0.5rem;
-    font-size: 1rem;
-    color: #333;
-  }
-  
-  .icon {
-    font-size: 1.5rem;
-    transition: transform 0.3s ease;
-  }
-  
+}
+
+.share > div {
+  flex: 1 1 30%; 
+  min-width: 250px;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+
+.faq-questions {
+  margin-top: 10px;
+}
