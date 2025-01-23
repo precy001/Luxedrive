@@ -1,65 +1,102 @@
 .ques {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-  
-  .dropdowns {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem; 
-    padding: 2rem 8rem;
-    
-   
-  }
-  
-  .faq-item {
-    border-radius: 4px;
-   
-    cursor: pointer;
-    padding: .3rem;
-    transition: all 0.3s ease; 
-    border: 1px solid black;
-    transition: .5s ease-in-out ;
-  }
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+}
 
+.faq-sections {
+  margin-top: 20px;
+}
 
-  
-  .faq-question {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1.2rem;
-    
-   
-   
-    border-radius: 4px;
+.section-nav button {
+  margin-right: 15px;
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+}
 
-    transition: background-color 0.3s ease;
-  }
+.section-nav button.active {
+  background-color: #b9b9b9;
+  color: white;
+}
 
-  .the-question{
-    font-size: .8rem;
-    font-weight: 600;
-    opacity: .8;
-  }
-  
-  .faq-answer {
-   
-    border-radius: 6px;
-    margin-top: 0.5rem;
-    font-size: .8rem;
-    color: #333;
-    opacity: .8;
-  }
-  
-  .icon {
-    font-size: 1.5rem;
-    transition: transform 0.3s ease;
-  }
-  
-  .faqs-container{
-    margin-bottom: 7rem;
-    margin-top: 2rem;
-  }
+.faq-item {
+  margin-bottom: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: .5rem;
+  transition: all 0.3s ease;
+  border: 1px solid #ddd;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.the-question {
+  font-size: .8rem;
+  font-weight: 600;
+  opacity: .8;
+}
+
+.faq-answer {
+  padding-left: 20px;
+  margin-top: 5px;
+  font-size: .8rem;
+  color: #333;
+  opacity: .8;
+}
+
+.icon {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.faq-divider {
+  margin-top: 20px;
+}
+
+.share {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-evenly;
+  gap: 15px; 
+  margin-top: 10px;
+  padding: 20px;
+}
+
+.share > div {
+  flex: 1 1 30%; 
+  min-width: 250px;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.faq-questions {
+  margin-top: 10px;
+}
+
+.dropdowns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem; 
+  padding: 2rem 8rem;
+}
+
+.faqs-container {
+  margin-bottom: 7rem;
+  margin-top: 2rem;
+}
