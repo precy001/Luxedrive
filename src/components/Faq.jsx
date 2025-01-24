@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import '../styles/faq.css';
+import { useRef } from 'react';
 
 const Faq = () => {
   const [activeIndex, setActiveIndex] = useState(null);
   const [activeSection, setActiveSection] = useState('general');
+
+  const containerRef = useRef(null)
 
   const faqData = {
     general: [
@@ -64,7 +67,9 @@ const Faq = () => {
   return (
     <div>
       <div className="ques">Have Any Questions?</div>
-      <hr className="faq-divider" />
+      <center>
+      <hr className="default-rule" />
+      </center>
       <div className="faq-sections">
         <center>
           <div className="section-nav">
@@ -85,7 +90,7 @@ const Faq = () => {
               <div className="faq-item" key={index}>
                 <div className="faq-question" onClick={() => toggleAnswer(index)}>
                   <span>{question.question}</span>
-                  <span className="icon">
+                  <span className="icon" ref={containerRef}>
                     {activeIndex === index ? <IoIosArrowUp /> : <IoIosArrowDown />}
                   </span>
                 </div>
