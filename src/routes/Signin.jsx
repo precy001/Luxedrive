@@ -21,7 +21,6 @@ const Signin = () => {
 
   const[username, setUsername] = useState('')
 
-  console.log(`Username : ${username}`)
 
   const[password, setPassword] = useState('')
   const handlePasswordChange = (e) => {
@@ -49,7 +48,10 @@ const Signin = () => {
           if(data[0]  == 'success' && data[1]) {
             const backendUsername = data[1]
             setUsername(backendUsername);
-            navigate('/home', {state: {email, username}})
+            localStorage.clear()
+            localStorage.setItem('username', backendUsername)
+            localStorage.setItem('email', email)
+            navigate(`/home?username=${backendUsername}&email=${email}`);
           } else {
             alert(data);
           }
@@ -102,9 +104,16 @@ const Signin = () => {
       .then(response => {
         const data = response.data;
         setBackEndResponse(data); 
-        if (data === 'success') {
-          window.location.href = "/home";  
-          setUser({email });
+        if (data == "success") {
+          const backendUsername = credentialResponseDecoded.name
+          const userMail = credentialResponseDecoded.email
+          setUsername(backendUsername);
+          localStorage.clear()
+          localStorage.setItem('username', backendUsername)
+          localStorage.setItem('email', userMail)
+          navigate(`/home?username=${backendUsername}&email=${email}`);
+          console.log(backendUsername)
+          console.log(userMail)
         } else {
           alert(data); 
         }

@@ -4,8 +4,12 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { GoogleLogin } from '@react-oauth/google'
 import { jwtDecode } from 'jwt-decode'
+import { useNavigate } from 'react-router-dom'
 
 const Signup = () => {
+
+
+  const navigate = useNavigate();
 
   const [backEndResponse, setBackEndResponse] = useState(null)
 
@@ -109,8 +113,15 @@ const Signup = () => {
       .then(response => {
         const data = response.data;
         setBackEndResponse(data); 
-        if (data === 'success') {
-          window.location.href = "/home"; 
+        if (data == "success") {
+          const backendUsername = credentialResponseDecoded.name
+          const userMail = credentialResponseDecoded.email
+          localStorage.clear()
+          localStorage.setItem('username', backendUsername)
+          localStorage.setItem('email', userMail)
+          navigate(`/home?username=${backendUsername}&email=${email}`);
+          console.log(backendUsername)
+          console.log(userMail)
         } else {
           alert(data); 
         }
@@ -122,7 +133,7 @@ const Signup = () => {
   onError={() => {
     setError("An error occurred, please try again later");
   }}
-        />
+/>
                 </div>
 
                 <hr className="auth-rule" />

@@ -19,11 +19,18 @@
         FILTER_SANITIZE_EMAIL
      );
 
+     $user_name = filter_input(
+        INPUT_POST, 
+        'name', 
+        FILTER_SANITIZE_SPECIAL_CHARS
+     );
+
+
      $check = "SELECT * FROM users_data WHERE user_email = '$user_email'";
      $result = mysqli_query($conn, $check);
 
      if(mysqli_num_rows($result) > 0){
-        echo"success";
+            echo"success";
      }else{
 
         $check = "SELECT MAX(user_id) AS highest_id FROM users_data";
@@ -37,12 +44,7 @@
         $next_id = $highest_id + 1;
         $input_id = "00$next_id";
 
-        $user_name = filter_input(
-            INPUT_POST, 
-            'name', 
-            FILTER_SANITIZE_EMAIL
-         );
-
+      
          $user_password = $_POST['password'];
 
          $input_password = "google_oauth_$user_password";
