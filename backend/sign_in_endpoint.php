@@ -24,6 +24,8 @@
    'email', 
    FILTER_SANITIZE_EMAIL
 );
+
+
     $user_password = $_POST['password'];
 
     $check = "SELECT * FROM users_data WHERE user_email = '$user_email'";
@@ -33,8 +35,11 @@
         $row = mysqli_fetch_assoc($result);
         $user_name = $row['user_name'];
         $user_hashed_password = $row['user_password'];
+
+        $data = ["success", $user_name];
        if(password_verify($user_password, $user_hashed_password)){
-            echo"success";
+          $json_data = json_encode($data);
+          echo $json_data;
        }else{
         echo"Invalid credentials";
        }

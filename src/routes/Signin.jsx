@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
-import { useEffect } from 'react'
 import '../styles/signup.css'
-import { data, Link } from 'react-router-dom'
+import { data, Link, Navigate } from 'react-router-dom'
 import axios from 'axios'
 import { GoogleLogin } from '@react-oauth/google'
 import { jwtDecode } from 'jwt-decode'
+import { useNavigate } from 'react-router-dom'
 
-const Signup = () => {
+
+const Signin = () => {
+  const navigate = useNavigate()
+
   const [backEndResponse, setBackEndResponse] = useState(null)
 
   const[error, setError] = useState('')
@@ -16,11 +19,14 @@ const Signup = () => {
     setEmail(e.target.value)
   }
 
+  const[username, setUsername] = useState('')
+
+  console.log(`Username : ${username}`)
+
   const[password, setPassword] = useState('')
   const handlePasswordChange = (e) => {
     setPassword(e.target.value)
   }
-  console.log(backEndResponse)
  
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -40,8 +46,10 @@ const Signup = () => {
         .then(response => {
           const data = response.data;
           setBackEndResponse(data); 
-          if (data === 'success') {
-            window.location.href = "/home"; 
+          if(data[0]  == 'success' && data[1]) {
+            const backendUsername = data[1]
+            setUsername(backendUsername);
+            navigate('/home', {state: {email, username}})
           } else {
             alert(data);
           }
@@ -52,8 +60,6 @@ const Signup = () => {
     }
   };
   
-
-  console.log(error)
 
   return (
 
@@ -98,6 +104,7 @@ const Signup = () => {
         setBackEndResponse(data); 
         if (data === 'success') {
           window.location.href = "/home";  
+          setUser({email });
         } else {
           alert(data); 
         }
@@ -155,4 +162,4 @@ const Signup = () => {
   )
 }
 
-export default Signup
+export default Signin
