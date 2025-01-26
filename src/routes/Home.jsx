@@ -1,6 +1,8 @@
 import React from 'react'
-import { useState } from 'react'
+import HomeHeader from '../components/HomeHeader';
 import { useLocation , useNavigate} from 'react-router-dom'
+import HomeRent from '../components/HomeRent';
+import Footer from '../components/Footer';
 
 
 const Home = () => {
@@ -14,7 +16,9 @@ const Home = () => {
   }else{
     return (
       <div>
-        welcome {username}
+        <HomeHeader username= {username}/>
+        <HomeRent />
+        <Footer />
       </div>
     )
   }
