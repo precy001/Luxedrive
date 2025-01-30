@@ -1,0 +1,19 @@
+.rent-buttons-container button{
+    background-color: transparent;
+    border: none;
+    padding: .5rem 1rem;
+    padding-bottom: 0;
+    font-family: 'varela';
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.non-active-button{
+    opacity: .5;
+    font-size: .8rem;
+}
+
+.active-rent-btn{
+    text-decoration: underline;
+}

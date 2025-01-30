@@ -35,7 +35,7 @@
     padding: .8rem;
     padding-bottom: 1rem;
     background-color: rgba(255, 255, 255, .5);
-    flex: 1 1 calc(10% - 16px);
+    flex: 1 1 calc(16% - 16px);
     box-sizing: border-box;
 }
 

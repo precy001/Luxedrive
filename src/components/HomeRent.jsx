@@ -1,6 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import scorpio from '../assets/images/Products/cars/scorpio.png'
+import linea from '../assets/images/Products/cars/linea.png'
+import jaguar from '../assets/images/Products/cars/jaguar.png'
+import maserati from '../assets/images/Products/cars/maserati.png'
+import quattroporte from '../assets/images/Products/cars/quattroporte.png'
+import benz from '../assets/images/Products/cars/benz.png'
+import volkswagen from '../assets/images/Products/cars/volkswagen.png'
+import whiteJaguar from '../assets/images/Products/cars/whiteJaguar.png'
+import a6 from '../assets/images/Products/cars/a6.png'
+import wrangler from '../assets/images/Products/cars/wrangler.png'
+import verzel from '../assets/images/Products/cars/verzel.png'
+import audi from '../assets/images/Products/cars/audi.png'
+
+const images = [scorpio, linea, jaguar, maserati, quattroporte, benz, volkswagen, whiteJaguar, a6, wrangler, verzel, audi]
 
 const HomeRent = () => {
 
@@ -22,10 +35,17 @@ const HomeRent = () => {
   return (
     <div>
 
+        <div className="top">
+            Rent a Vehicle
+        </div>    
+
         <center>
-        <button>Rent Car</button>
-        <button>Rent Bike</button>
+        <hr className="default-rule" />
         </center>
+
+        <div className="lrent-short-note">
+        Rent a car with ease—flexible options, great rates, and reliable service. Book now!
+        </div>
         
         <div className="products-container">
         {data.map((datalist, key) => (
@@ -34,7 +54,7 @@ const HomeRent = () => {
             key={key}
             className='each-car-product'
             >
-            <img src={scorpio} />
+            <img src={images[key]} />
             <div className="product-name">{datalist.productName}</div>
 
             
@@ -49,7 +69,7 @@ const HomeRent = () => {
                     </div>
 
                     <div className="doors">
-                        Doors: {datalist.doors}
+                        Doors: {datalist.door}
                     </div>
 
                     <div className="fuel">
@@ -59,14 +79,14 @@ const HomeRent = () => {
                     <div className="price">
                         Per hour <br />
                         <div className="price-tag">
-                            {datalist.pricePerHour}
+                        ${datalist.price}
                         </div>
                     </div>
                 </div>
 
                 <div className="specs-right">
                     <div className="horsepower">
-                        Horsepower: {datalist.horsePower}
+                        Horsepower: {datalist.horsepower}
                     </div>
 
                     <div className="engine">
@@ -88,8 +108,7 @@ const HomeRent = () => {
             </div>
 
             </div>
-
-        ))}
+        ))} 
         </div>
     </div>
   )

@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App.jsx";
 import Signin from "./routes/Signin.jsx";
 import Signup from "./routes/Signup.jsx";
+import Dashboard from "./routes/Dashboard.jsx";
 import TermsAndConditions from "./routes/TermsAndConditions.jsx";
 import Home from "./routes/Home.jsx";
 import { GoogleOAuthProvider } from "@react-oauth/google";
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
   { path: "/signup", element: <Signup /> },
   { path: "/terms", element: <TermsAndConditions /> },
   { path: "/home", element: <Home /> },
+  {path:"/dashboard", element: <Dashboard />}
 ]);
 
 createRoot(document.getElementById("root")).render(
