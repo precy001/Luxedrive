@@ -35,6 +35,7 @@ const Header = () => {
                     <img src={blackBmw} alt="" className='right-img'/></div>
             </div>
         </div>
+       
     </div>
   )
 }
