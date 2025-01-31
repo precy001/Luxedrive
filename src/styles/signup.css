@@ -4,6 +4,7 @@
 }
 
 .auth-left{
+    overflow-y: hidden;
     width: 45%;
     background: radial-gradient(rgba(0,0,0, 0.8), rgba(0,0,0, 0.8)), url(../assets/images/backG.jpg);
     height: 100vh;
