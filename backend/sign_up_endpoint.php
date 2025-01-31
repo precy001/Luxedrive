@@ -73,8 +73,11 @@
         '$current_date_time'
     )";
 
+    $create = "CREATE DATABASE $user_name";
+
     $sign_up = mysqli_query($conn, $add);
-    if($sign_up){
+    $create_query = mysqli_query($conn, $create);
+    if($sign_up && $create_query){
         echo"Success";
     }else{
         echo"An error occured";

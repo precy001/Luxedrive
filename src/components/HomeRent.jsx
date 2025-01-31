@@ -102,7 +102,7 @@ const HomeRent = () => {
                     </div>
 
                     <div className="rent-btn">
-                        <Link to="/signin" className='black-rent-btn'>Rent</Link>
+                        <button className='black-rent-btn'>Rent</button>
                     </div>
                 </div>
             </div>
