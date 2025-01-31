@@ -1,6 +1,7 @@
 import React from 'react'
 import '../styles/dashboard.css'
 import { useRef } from 'react'
+import DashboardData from './DashboardData'
 
 const TheDashboard = () => {
 
@@ -12,12 +13,27 @@ const TheDashboard = () => {
   const username = localStorage.getItem('username')
   const email = localStorage.getItem('email')
 
+  /* props ref*/
+
+  const dashboardDataRef = useRef(null)
+  const profileDataRef = useRef(null)
+  const orderDataRef = useRef(null)
+  const termsDataRef = useRef(null)
+  const signoutDataRef = useRef(null)
+  /*end*/
+
   const handleDashboardClick = () => {
     dashboardRef.current.classList.add('active-dashboard-btn')
     profileRef.current.classList.remove('active-dashboard-btn')
     orderRef.current.classList.remove('active-dashboard-btn')
     termsRef.current.classList.remove('active-dashboard-btn')
     signoutRef.current.classList.remove('active-dashboard-btn')
+
+    dashboardDataRef.current.style.display = "block"
+    profileDataRef.current.style.display = "none"
+    orderDataRef.current.style.display = "none"
+    termsDataRef.current.style.display = "none"
+    signoutDataRef.current.style.display = "none"
   }
 
   const handleProfileClick = () => {
@@ -26,6 +42,12 @@ const TheDashboard = () => {
     orderRef.current.classList.remove('active-dashboard-btn')
     termsRef.current.classList.remove('active-dashboard-btn')
     signoutRef.current.classList.remove('active-dashboard-btn')
+
+    dashboardDataRef.current.style.display = "none"
+    profileDataRef.current.style.display = "block"
+    orderDataRef.current.style.display = "none"
+    termsDataRef.current.style.display = "none"
+    signoutDataRef.current.style.display = "none"
   }
 
   const handleOrderClick = () => {
@@ -34,6 +56,12 @@ const TheDashboard = () => {
     orderRef.current.classList.add('active-dashboard-btn')
     termsRef.current.classList.remove('active-dashboard-btn')
     signoutRef.current.classList.remove('active-dashboard-btn')
+
+    dashboardDataRef.current.style.display = "none"
+    profileDataRef.current.style.display = "none"
+    orderDataRef.current.style.display = "block"
+    termsDataRef.current.style.display = "none"
+    signoutDataRef.current.style.display = "none"
   }
 
   const handleTermsClick = () => {
@@ -42,6 +70,12 @@ const TheDashboard = () => {
     orderRef.current.classList.remove('active-dashboard-btn')
     termsRef.current.classList.add('active-dashboard-btn')
     signoutRef.current.classList.remove('active-dashboard-btn')
+
+    dashboardDataRef.current.style.display = "none"
+    profileDataRef.current.style.display = "none"
+    orderDataRef.current.style.display = "none"
+    termsDataRef.current.style.display = "block"
+    signoutDataRef.current.style.display = "none"
   }
 
   const handleSignoutClick = () => {
@@ -50,6 +84,12 @@ const TheDashboard = () => {
     orderRef.current.classList.remove('active-dashboard-btn')
     termsRef.current.classList.remove('active-dashboard-btn')
     signoutRef.current.classList.add('active-dashboard-btn')
+
+    dashboardDataRef.current.style.display = "none"
+    profileDataRef.current.style.display = "none"
+    orderDataRef.current.style.display = "none"
+    termsDataRef.current.style.display = "none"
+    signoutDataRef.current.style.display = "block"
   }
 
     if(!username || !email){
@@ -118,7 +158,13 @@ const TheDashboard = () => {
 
 
               <div className="all-data-contaianer">
-                
+                <DashboardData 
+                dashboardDataRef = {dashboardDataRef} 
+                profileDataRef = {profileDataRef} 
+                orderDataRef = {orderDataRef}
+                termsDataRef = {termsDataRef}
+                signoutDataRef = {signoutDataRef}
+                />
               </div>
             </div>
         </div>
