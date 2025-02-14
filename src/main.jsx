@@ -10,6 +10,7 @@ import Home from "./routes/Home.jsx";
 import  Success  from "./routes/Success.jsx";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Extend from "./routes/Extend.jsx";
 
 
 const router = createBrowserRouter([
@@ -18,8 +19,9 @@ const router = createBrowserRouter([
   { path: "/signup", element: <Signup /> },
   { path: "/terms", element: <TermsAndConditions /> },
   { path: "/home", element: <Home /> },
-  {path:"/dashboard", element: <Dashboard />}
-  ,{path:"/success", element:<Success />}
+  {path:"/dashboard", element: <Dashboard />}, 
+  {path:"/success", element:<Success />},
+  {path:"/extend", element:<Extend />}
 ]);
 
 createRoot(document.getElementById("root")).render(

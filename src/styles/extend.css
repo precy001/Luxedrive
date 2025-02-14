@@ -1,0 +1,155 @@
+.extend {
+    padding: 20px;
+  }
+  
+  .success-brand-name {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  .car-details {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    justify-content: space-evenly;
+  }
+ .details{
+    width: 450px;
+    height: 420px;
+    background-color: #f5f5f5;
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 550px;
+ }
+.car-image {
+    background-color: #f5f5f5;
+    border-radius: 8px;
+ height: 410px;
+
+    img{
+        width: 500px;
+        margin-top:50px ;
+    }
+}
+.carspecc {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+ 
+    max-width: 600px;
+    margin: 20px auto;
+  }
+  
+  .car-description {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 15px;
+    line-height: 1.5;
+  }
+  
+  .specs {
+   
+    padding: 15px;
+    border-radius: 8px;
+    width: 500px;
+  }
+  
+  .specs h1 {
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #222;
+  }
+  
+  .specs p {
+    font-size: 20px;
+    color: #333;
+    margin: 6px 0px;
+    margin-bottom: 10px;
+    display: flex;
+   gap: 40px;
+   justify-content: space-between;
+   opacity: .8;
+ 
+  }
+  
+  .specs p span {
+    font-weight: bold;
+    color: #555;
+    font-size: 1rem;
+    float: right;
+    opacity: .8;
+  }
+  
+.arrow-button {
+    font-size: 2px;
+    cursor: pointer;
+    color: #333;
+    margin: 0 10px;
+    height: 30px;
+    width: 30px;
+    background-color: white;
+    border-radius: 50%;
+    margin-bottom: 170px;
+  
+  }
+  label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    display: block;
+  }
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+  input[type="date"] {
+    width: 65%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    margin-left:10px ;
+
+  }
+  input[type="time"] {
+    width: 25%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    margin-right:10px ;
+  }
+  .book-now-button {
+    background-color: #000000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+  }
+  .duration-details{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    .duration-time{
+        font-size: .8rem;
+        color: #858585;
+    }
+    .duration-price{
+        width: 60px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, .2);
+    }
+  }
+  .date-time-inputs{
+    display: flex;
+    justify-content: space-between;
+  }
