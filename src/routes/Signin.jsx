@@ -51,7 +51,7 @@ const Signin = () => {
             localStorage.clear()
             localStorage.setItem('username', backendUsername)
             localStorage.setItem('email', email)
-            navigate(`/home?username=${backendUsername}&email=${email}`);
+            navigate(`/home`);
           } else {
             alert(data);
           }
@@ -111,7 +111,7 @@ const Signin = () => {
           localStorage.clear()
           localStorage.setItem('username', backendUsername)
           localStorage.setItem('email', userMail)
-          navigate(`/home?username=${backendUsername}&email=${email}`);
+          navigate(`/home`);
           console.log(backendUsername)
           console.log(userMail)
         } else {
